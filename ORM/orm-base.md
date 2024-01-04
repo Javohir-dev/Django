@@ -57,5 +57,17 @@ Django ORM (Object-Relational Mapping) ko'p imkoniyatlar bilan ta'minlangan va o
    with transaction.atomic():
        # Ma'lumotlarni yangilash
    ```
+9. **`exclude()` - bu Django ORM-da ishlatiladigan metod, ma'lumotlar bazasidan ma'lumotlarni tanlashda qo'llaniladi. Bu metod qo'llanilgan daraja ko'proq ma'lumotlarni tanlashda foydalaniladi va ma'lumotlar bazasidan tanlangan ma'lumotlarni ekskluziv ravishda chiqarish uchun ishlatiladi.**
+
+Masalan, agar siz bir nechta ma'lumotlarni olishni xohlasangiz va ular ichidan qandaydir bir qismini tanlamaslik kerak bo'lsa, `exclude()` metodi juda foydali bo'ladi. Misol uchun:
+
+```python
+from myapp.models import MyModel
+
+# MyModel jadvallaridan `some_field` qiymati 'some_value' ga teng bo'lmagan barcha ma'lumotlarni olish
+filtered_data = MyModel.objects.exclude(some_field='some_value')
+```
+
+Ushbu misolda, `MyModel` jadvalidan `some_field` ning qiymati 'some_value' ga teng bo'lmagan barcha ma'lumotlar olinadi. `exclude()` metodi bilan tanlangan shart bajariladi va ushbu shartga mos keladigan ma'lumotlar tanlanmaydi, balki ular o'chiriladi. `exclude()` metodidan foydalanish orqali kerakli ma'lumotlar ro'yhatini olish va ular ichidan ayirmoqchi bo'lgan shartni belgilash oson bo'ladi.
 
 Bu funksiyalar bilan Django ORM yordamida ma'lumotlarga kirish, ularga ega bo'lish va ularga o'zgartirishni boshqarish oson bo'ladi. Ushbu funksiyalar yordamida boshqa operatsiyalarni ham bajarishingiz mumkin, shuningdek filtratsiya, ma'lumotlar ustida matematik amallar, aggregatlar va boshqalar.
