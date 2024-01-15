@@ -91,9 +91,3 @@ key = Key.objects.all().values_list('status', 'key_id')
 >>> key
 <QuerySet [('CKD', 7998), ('CKD', 6605)]>
 ```
-
-
-
-Ushbu misolda, `MyModel` jadvalidan `some_field` ning qiymati 'some_value' ga teng bo'lmagan barcha ma'lumotlar olinadi. `exclude()` metodi bilan tanlangan shart bajariladi va ushbu shartga mos keladigan ma'lumotlar tanlanmaydi, balki ular o'chiriladi. `exclude()` metodidan foydalanish orqali kerakli ma'lumotlar ro'yhatini olish va ular ichidan ayirmoqchi bo'lgan shartni belgilash oson bo'ladi.
-
-Bu funksiyalar bilan Django ORM yordamida ma'lumotlarga kirish, ularga ega bo'lish va ularga o'zgartirishni boshqarish oson bo'ladi. Ushbu funksiyalar yordamida boshqa operatsiyalarni ham bajarishingiz mumkin, shuningdek filtratsiya, ma'lumotlar ustida matematik amallar, aggregatlar va boshqalar.
