@@ -71,7 +71,7 @@ filtered_data = MyModel.objects.exclude(some_field='some_value')
 
 # 
 # Django ORM
-###  1. Telefon raqam ichida 4422 bor bo'lgan barcha userlarni ichiga oladi.**
+###  1. Telefon raqam ichida 4422 bor bo'lgan barcha userlarni ichiga oladi.
 ```python
 key = Key.objects.filter(key_id__icontains=6605)
 ```
